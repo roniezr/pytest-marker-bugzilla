@@ -78,7 +78,7 @@ def kwargify(f):
     @wraps(f)
     def wrapped(**kwargs):
         args = []
-        for arg in inspect.getargspec(f).args:
+        for arg in inspect.getfullargspec(f).args:
             if arg not in kwargs:
                 raise TypeError(
                     "Required parameter {0} not found in the "

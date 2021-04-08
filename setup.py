@@ -10,7 +10,7 @@ class PyTest(TestCommand):
         self.test_args = "-s tests/"
 
     def run_tests(self):
-        #import here, cause outside the eggs aren't loaded elsewhere
+        # import here, cause outside the eggs aren't loaded elsewhere
         import pytest
         print("Running: pytest %s" % self.test_args)
         sys.path.insert(0, 'lib')
@@ -47,5 +47,5 @@ setup(
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3.4',
     ],
-    cmdclass={'test': PyTest,},
+    cmdclass={'test': PyTest, },
 )
